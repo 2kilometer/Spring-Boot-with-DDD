@@ -6,9 +6,11 @@ import lombok.Getter;
 public class GamePractice {
     static int gameIdCount = 0;
 
+    private int number;
     private int gameId;
 
-    public GamePractice() {
+    public GamePractice(int number) {
+        this.number = number;
         this.gameId = ++gameIdCount;
     }
 }
