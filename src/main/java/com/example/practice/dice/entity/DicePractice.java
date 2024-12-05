@@ -3,10 +3,10 @@ package com.example.practice.dice.entity;
 import lombok.Getter;
 
 @Getter
-public class Dice {
+public class DicePractice {
     private int number;
 
-    public Dice(int number) {
+    public DicePractice(int number) {
         this.number = number;
     }
 }

@@ -1,6 +1,6 @@
 package com.example.practice.dice.repository;
 
-import com.example.practice.dice.entity.Dice;
+import com.example.practice.dice.entity.DicePractice;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -14,11 +14,11 @@ public class DicePracticeRepositoryImpl implements DicePracticeRepository {
     }
 
     @Override
-    public Dice rollDice() {
+    public DicePractice rollDice() {
         int randomNumber = createRandomNumber();
 
-        Dice dice = new Dice(randomNumber);
+        DicePractice dicePractice = new DicePractice(randomNumber);
 
-        return dice;
+        return dicePractice;
     }
 }

@@ -1,7 +1,7 @@
 package com.example.practice.dice.repository;
 
-import com.example.practice.dice.entity.Dice;
+import com.example.practice.dice.entity.DicePractice;
 
 public interface DicePracticeRepository {
-    Dice rollDice();
+    DicePractice rollDice();
 }

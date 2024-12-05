@@ -1,6 +1,6 @@
 package com.example.practice.dice.controller;
 
-import com.example.practice.dice.entity.Dice;
+import com.example.practice.dice.entity.DicePractice;
 import com.example.practice.dice.service.DicePracticeService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -16,10 +16,10 @@ public class DicePracticeController {
     final private DicePracticeService dicePracticeService;
 
     @GetMapping("/roll-dice")
-    public Dice rollDice() {
+    public DicePractice rollDice() {
 //        log.info("practice roll-dice()called");
 
-        Dice acquiredDice = dicePracticeService.rollDice();
+        DicePractice acquiredDice = dicePracticeService.rollDice();
 
         return acquiredDice;
     }
