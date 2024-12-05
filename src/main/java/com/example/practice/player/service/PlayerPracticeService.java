@@ -1,5 +1,7 @@
 package com.example.practice.player.service;
 
+import com.example.practice.player.entity.PlayerPractice;
+
 public interface PlayerPracticeService {
-    void test();
+    PlayerPractice createPlayer(String name);
 }

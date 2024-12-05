@@ -1,5 +1,6 @@
 package com.example.practice.player.service;
 
+import com.example.practice.player.entity.PlayerPractice;
 import com.example.practice.player.repository.PlayerPracticeRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -12,9 +13,9 @@ public class PlayerPracticeServiceImpl implements PlayerPracticeService{
     final private PlayerPracticeRepository playerPracticeRepository;
 
     @Override
-    public void test() {
-        log.info("practice test() called");
+    public PlayerPractice createPlayer(String name) {
+        log.info("service called");
 
-        playerPracticeRepository.test();
+        return playerPracticeRepository.createPlayer(name);
     }
 }
