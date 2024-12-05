@@ -1,5 +1,6 @@
 package com.example.practice.game.service;
 
+import com.example.practice.game.entity.GamePractice;
 import com.example.practice.game.repository.GamePracticeRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -12,7 +13,7 @@ public class GamePracticeServiceImpl implements GamePracticeService{
     final private GamePracticeRepository gamePracticeRepository;
 
     @Override
-    public void test() {
-        gamePracticeRepository.test();
+    public GamePractice createSimpleGame() {
+        return gamePracticeRepository.createSimpleGame();
     }
 }
