@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @Slf4j
 @RestController
 @RequiredArgsConstructor
@@ -34,5 +36,13 @@ public class PlayerController {
 
         Player foundPlayer = playerService.findPlayer(playerFindRequestForm.toPlayerFindRequest());
         return foundPlayer;
+    }
+
+    @GetMapping("/list")
+    public List<Player> listPlayer() {
+        log.info("listPlayer() called!");
+
+        List<Player> responseList = playerService.listPlayer();
+        return responseList;
     }
 }

@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Slf4j
@@ -35,5 +36,12 @@ public class PlayerServiceImpl implements PlayerService{
         }
 
         return maybePlayer.get();
+    }
+
+    @Override
+    public List<Player> listPlayer() {
+        List<Player> playerList = playerRepository.findAll();
+        System.out.println("type {}" + playerList.getClass());
+        return playerList;
     }
 }
