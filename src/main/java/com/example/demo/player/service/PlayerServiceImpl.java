@@ -3,10 +3,15 @@ package com.example.demo.player.service;
 import com.example.demo.player.entity.Player;
 import com.example.demo.player.repository.PlayerRepository;
 import com.example.demo.player.service.request.PlayerCreateRequest;
+import com.example.demo.player.service.request.PlayerFindRequest;
 import com.example.demo.player.service.response.PlayerCreateResponse;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class PlayerServiceImpl implements PlayerService{
@@ -18,5 +23,17 @@ public class PlayerServiceImpl implements PlayerService{
         Player createdPlayer = playerRepository.save(player);
 
         return PlayerCreateResponse.from(createdPlayer);
+    }
+
+    @Override
+    public Player findPlayer(PlayerFindRequest playerFindRequest) {
+        Optional<Player> maybePlayer = playerRepository.findById(playerFindRequest.getPlayerId());
+
+        if (maybePlayer.isEmpty()) {
+            log.info("해당 playerId로 찾는 player가 없습니다.");
+            return null;
+        }
+
+        return maybePlayer.get();
     }
 }
