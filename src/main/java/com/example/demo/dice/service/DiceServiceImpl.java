@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class DiceServiceImpl implements DiceService {
-    final private DiceRepository diceRepository;
+    private final DiceRepository diceRepository;
 
     @Override
     public Dice rollDice() {
