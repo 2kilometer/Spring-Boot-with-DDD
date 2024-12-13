@@ -1,12 +1,15 @@
 package com.example.practice.player.controller;
 
+import com.example.practice.player.controller.request_form.PlayerPracticeCreateRequestForm;
+import com.example.practice.player.controller.response_form.PlayerPracticeCreateResponseForm;
 import com.example.practice.player.entity.PlayerPractice;
 import com.example.practice.player.service.PlayerPracticeService;
+import com.example.practice.player.service.response.PlayerPracticeCreateResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -20,14 +23,13 @@ public class PlayerPracticeController {
     final private PlayerPracticeService playerPracticeService;
 
     @GetMapping("/create")
-    public PlayerPractice createPlayer(
-            @RequestParam("name") String name
-    ){
-        return playerPracticeService.createPlayer(name);
+    public PlayerPracticeCreateResponseForm createPlayer(@ModelAttribute PlayerPracticeCreateRequestForm playerPracticeCreateRequestForm){
+        PlayerPracticeCreateResponse response = playerPracticeService.create(playerPracticeCreateRequestForm.toPlayerPracticeCreateRequest());
+        return PlayerPracticeCreateResponseForm.from(response);
     };
 
     @GetMapping("/list")
-    public List<Map<String, Object>> playerList(){
-        return playerPracticeService.list();
+    public List<PlayerPractice> playerList(){
+        return playerPracticeService.playerList();
     }
 }

@@ -1,11 +1,8 @@
 package com.example.practice.player.repository;
 
 import com.example.practice.player.entity.PlayerPractice;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
-import java.util.Map;
+public interface PlayerPracticeRepository extends JpaRepository<PlayerPractice, Long> {
 
-public interface PlayerPracticeRepository {
-    PlayerPractice createPlayer(String name);
-    List<Map<String, Object>> list();
 }

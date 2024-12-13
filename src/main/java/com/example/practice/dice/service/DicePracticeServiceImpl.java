@@ -12,6 +12,10 @@ public class DicePracticeServiceImpl implements DicePracticeService {
 
     @Override
     public DicePractice rollDice() {
-        return dicePracticeRepository.rollDice();
+        int randomNumber = (int)(Math.random() * 6) + 1;
+        DicePractice dice = new DicePractice(randomNumber);
+        DicePractice rolledDice = dicePracticeRepository.save(dice);
+
+        return rolledDice;
     }
 }

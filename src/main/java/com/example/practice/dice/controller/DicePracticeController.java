@@ -17,8 +17,6 @@ public class DicePracticeController {
 
     @GetMapping("/roll-dice")
     public DicePractice rollDice() {
-//        log.info("practice roll-dice()called");
-
         DicePractice acquiredDice = dicePracticeService.rollDice();
 
         return acquiredDice;
