@@ -12,5 +12,4 @@ public class PlayerCreateRequestForm {
     public PlayerCreateRequest toPlayerCreateRequest() {
         return new PlayerCreateRequest(this.name);
     }
-
 }

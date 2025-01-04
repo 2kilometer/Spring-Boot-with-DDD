@@ -1,5 +1,6 @@
 package com.example.demo.player.controller.request_form;
 
+import com.example.demo.player.service.request.PlayerCreateRequest;
 import com.example.demo.player.service.request.PlayerFindRequest;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
